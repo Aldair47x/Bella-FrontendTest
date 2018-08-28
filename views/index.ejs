@@ -80,7 +80,7 @@
 					
 
 					<!--  billboard stlye 1  -->
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#dfe7f2" background="img/hero_gradient.jpg" style="background-image: url('img/billboard.jpg'); background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: 0 0; background-repeat: no-repeat; text-align:center;">
+					<table id="image" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#dfe7f2" background="img/hero_gradient.jpg" style="background-image: url('img/billboard.jpg'); background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: 0 0; background-repeat: no-repeat; text-align:center;">
 						<tr>
 							<td>
 								<table width="600" cellpadding="0" cellspacing="0" align="center" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
@@ -916,7 +916,17 @@
 			</div>	
     </div>
 
-  </div>
+	</div>
+	<script type="text/javascript">
+	window.onload = function() {
+	setInterval(cambiarFondo, 5000);// 5 segundos
+	}
+	fondoActual = 0;
+	imagenes = ["img/billboard.jpg", "img/billboard2.jpg"];
+	function cambiarFondo() {
+		document.getElementById("image").style.backgroundImage = "url(" + imagenes[++fondoActual % imagenes.length] + ")";
+	}
+	</script>
 
 	
 
